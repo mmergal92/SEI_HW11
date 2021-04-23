@@ -1,0 +1,4 @@
+> show dbs
+> use vampires
+> db.vampires.find().pretty()
+ db.vampires.find({gender: "f"})
