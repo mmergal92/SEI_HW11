@@ -1,4 +1,12 @@
 > show dbs
 > use vampires
 > db.vampires.find().pretty()
- db.vampires.find({gender: "f"})
+
+Select by Comparison
+> db.vampires.find({gender: "f"})
+> db.vampires.find({victims:{$gt:500}}).pretty()
+> db.vampires.find({victims:{$lte:150}}).pretty()
+> db.vampires.find({victims:{$ne:210234}}).pretty()
+> db.vampires.find({$and: [{victims:{$gt:150}},{victims:{$lt:500}}]}).pretty()
+
+Select by exists or does not exist
