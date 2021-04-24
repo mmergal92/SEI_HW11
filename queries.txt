@@ -25,4 +25,10 @@ Select objects that match
 > db.vampires.find({$or: [{loves:{$eq:"frilly shirtsleeves"}},{loves:{$eq:"frilly collars"}}]}).pretty()
 > db.vampires.find({loves:{$eq:"frilly shirtsleeves"}}).pretty()
 > db.vampires.find({$or: [{loves:{$eq:"appearing innocent"}},{loves:{$eq:"trickery"}},{loves:{$eq:"lurking in rotting mansions"}},{loves:{$eq:"R&B music"}}]}).pretty()
- db.vampires.find({$and: [{loves:{$nin:["top hats","virgin blood"]}},{loves:"fancy cloaks"}]}).pretty()
+> db.vampires.find({$and: [{loves:{$nin:["top hats","virgin blood"]}},{loves:"fancy cloaks"}]}).pretty()
+
+Negative Selection
+> db.vampires.find({$and: [{loves:"ribbons"},{eye_color:{$ne:"brown eyes"}}]}).pretty()
+> db.vampires.find({location:{$ne:"Rome"}}).pretty()
+> db.vampires.find({$nor:[{loves:"fancy cloaks"},{loves:"frilly shirtsleeves"},{loves:"appearing innocent"},{loves:"being tragic"},{loves:"brooding"}]}).pretty()
+> db.vampires.find({victims:{$lte:200}}).pretty()
