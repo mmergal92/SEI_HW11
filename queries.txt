@@ -21,3 +21,8 @@ Select with or
 > db.vampires.find({$or: [{loves:{$eq:"marshmallows"}},{victims:{$gt:1000}}]}).pretty()
 > db.vampires.find({$or: [{hair_color:{$eq:"red"}},{eye_color:{$eq:"green"}}]}).pretty()
 
+Select objects that match
+> db.vampires.find({$or: [{loves:{$eq:"frilly shirtsleeves"}},{loves:{$eq:"frilly collars"}}]}).pretty()
+> db.vampires.find({loves:{$eq:"frilly shirtsleeves"}}).pretty()
+> db.vampires.find({$or: [{loves:{$eq:"appearing innocent"}},{loves:{$eq:"trickery"}},{loves:{$eq:"lurking in rotting mansions"}},{loves:{$eq:"R&B music"}}]}).pretty()
+ db.vampires.find({$and: [{loves:{$nin:["top hats","virgin blood"]}},{loves:"fancy cloaks"}]}).pretty()
