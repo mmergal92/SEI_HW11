@@ -35,6 +35,8 @@ Negative Selection
 
 Replace
 > db.vampires.replaceOne({name: "Claudia"}, {name: "Eve", portrayed_by: "Tilda Swinton"})
+> db.vampires.replaceOne({name: "Count Dracula"},{name: "Guy man"})
+> db.vampires.aggregate({name:"Guy Man},{$mergeObjects:[{ is_actually: "were-lizard"}]})
 
 Update 
 
