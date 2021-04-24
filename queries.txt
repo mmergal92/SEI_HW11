@@ -14,3 +14,10 @@ Select by exists or does not exist
 > db.vampires.find({victims:{$exists:false}}).pretty()
 > db.vampires.find({$and: [{title:{$exists:true}},{victims:{$exists:false}}]}).pretty()
 > db.vampires.find({$and: [{victims:{$exists:true}},{victims:{$gt:1000}}]}).pretty()
+
+Select with or
+> db.vampires.find({$or: [{location:{$eq:"New York, New York, US"}},{location:{$eq:"New Orleans, Louisiana, US"}}]}).pretty()
+> db.vampires.find({$or: [{loves:{$eq:"brooding"}},{loves:{$eq:"being tragic"}}]}).pretty()
+> db.vampires.find({$or: [{loves:{$eq:"marshmallows"}},{victims:{$gt:1000}}]}).pretty()
+> db.vampires.find({$or: [{hair_color:{$eq:"red"}},{eye_color:{$eq:"green"}}]}).pretty()
+
