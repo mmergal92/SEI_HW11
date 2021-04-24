@@ -10,3 +10,7 @@ Select by Comparison
 > db.vampires.find({$and: [{victims:{$gt:150}},{victims:{$lt:500}}]}).pretty()
 
 Select by exists or does not exist
+> db.vampires.find({},{title: 1, contribs: 1}).pretty()
+> db.vampires.find({victims:{$exists:false}}).pretty()
+> db.vampires.find({$and: [{title:{$exists:true}},{victims:{$exists:false}}]}).pretty()
+> db.vampires.find({$and: [{victims:{$exists:true}},{victims:{$gt:1000}}]}).pretty()
