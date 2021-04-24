@@ -32,3 +32,12 @@ Negative Selection
 > db.vampires.find({location:{$ne:"Rome"}}).pretty()
 > db.vampires.find({$nor:[{loves:"fancy cloaks"},{loves:"frilly shirtsleeves"},{loves:"appearing innocent"},{loves:"being tragic"},{loves:"brooding"}]}).pretty()
 > db.vampires.find({victims:{$lte:200}}).pretty()
+
+Replace
+> db.vampires.replaceOne({name: "Claudia"}, {name: "Eve", portrayed_by: "Tilda Swinton"})
+
+Update 
+
+Remove:
+> db.vampires.remove({hair_color:"brown"})
+> db.vampires.remove({},{eye_color: "blue"})
